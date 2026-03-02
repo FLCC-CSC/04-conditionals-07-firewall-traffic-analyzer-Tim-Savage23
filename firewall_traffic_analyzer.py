@@ -14,16 +14,16 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-port_number= int(input("Enter port number: "))
-transfer_size= int(input("Enter transfer size in MB"))
-if (port_number == 22 or port_number == 3369) and transfer_size >= 100:
-    print("HIGH RISK: Potential unauthorized remote access detected!")
+port_number = int(input("Enter port number: "))
+transfer_size = int(input("Enter transfer size in MB: "))
+if (port_number == 22 or port_number == 3389) and transfer_size >= 100:
+    print("Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!")
 elif port_number == 80 and transfer_size > 100:
-    print("MEDIUM RISK: Large unencrypted data transfer detected.")
+    print("Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.")
 elif port_number == 443:
-    print ("LOW RISK: Secure encrypted transfer detected.")
+    print ("Risk Assessment: LOW RISK: Secure encrypted transfer detected.")
 else:
-    print("UNKNOWN: Unrecognized traffic pattern.")
+    print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
