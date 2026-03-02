@@ -14,16 +14,28 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-port_number = int(input("Enter port number: "))
-transfer_size = int(input("Enter transfer size in MB: "))
+port_number = int(input())
+transfer_size = int(input())
+print ("=== Network Traffic Security Analyzer ===")
+print ()
+print("FIREWALL LOG:")
+print("Port:", port_number, ", Transfer Size:", transfer_size, "MB")
+
 if (port_number == 22 or port_number == 3389) and transfer_size >= 100:
-    print("Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!")
+    risk = "HIGH RISK: Potential unauthorized remote access detected!"
 elif port_number == 80 and transfer_size > 100:
-    print("Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.")
+    risk = "MEDIUM RISK: Large unencrypted data transfer detected."
 elif port_number == 443:
-    print ("Risk Assessment: LOW RISK: Secure encrypted transfer detected.")
+    risk = "LOW RISK: Secure encrypted transfer detected."
 else:
-    print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
+    risk = "UNKNOWN: Unrecognized traffic pattern."
+
+print("Risk Assessment:", risk)
+print("------------------------------")
+
+
+
+
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
