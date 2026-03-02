@@ -1,8 +1,8 @@
 # FILE NAME - firewall_traffic_analyzer.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Tim Savage
+# DATE: March, 1, 2026
+# BRIEF DESCRIPTION:  Port number then risk level.
 
 
 
@@ -14,11 +14,24 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+port_number = int(input())
+transfer_size = int(input())
+print ("=== Network Traffic Security Analyzer ===")
+print ()
+print("FIREWALL LOG:")
+print("Port:", port_number, ", Transfer Size:", transfer_size, "MB")
 
+if (port_number == 22 or port_number == 3389) and transfer_size >= 100:
+    risk = "HIGH RISK: Potential unauthorized remote access detected!"
+elif port_number == 80 and transfer_size > 100:
+    risk = "MEDIUM RISK: Large unencrypted data transfer detected."
+elif port_number == 443:
+    risk = "LOW RISK: Secure encrypted transfer detected."
+else:
+    risk = "UNKNOWN: Unrecognized traffic pattern."
 
-
-
-
+print("Risk Assessment:", risk)
+print("------------------------------")
 
 
 
@@ -50,10 +63,10 @@ Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.
 === Network Traffic Security Analyzer ===
 
 Enter the port number (e.g., 80, 22, 443, 3389): 22
-Enter the data transfer size in megabytes (MB): 12
+Enter the data transfer size in megabytes (MB): 1200
 
 FIREWALL LOG:
-Port: 22, Transfer Size: 12 MB
+Port: 22, Transfer Size: 1200 MB
 Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!
 ------------------------
 '''
@@ -90,7 +103,7 @@ Risk Assessment: UNKNOWN: Unrecognized traffic pattern.
 
 1. Did you get tripped up using the `or` or `and` operators? If so, how?
 
-
+Yes, a little bit. I was confused at first about where to place the "and" and "or" and whether or not they both went inside parenthesis.
 
 
 
